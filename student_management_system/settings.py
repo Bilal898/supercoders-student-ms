@@ -34,6 +34,8 @@ STATIC_URL = '/static/'
 # STATICFILES_DIR=os.path.join(BASE_DIR, "static") 
 STATIC_ROOT=os.path.join(BASE_DIR, "static")
 # Application definition
+AUTHENTICATION_BACKENDS=['student_management_app.EmailBackEnd.EmailBackEnd']
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -42,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'student_management_app'
+    'student_management_app',
+
 ]
 
 MIDDLEWARE = [
@@ -130,3 +133,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 # STATIC_URL = '/static/'
+AUTH_USER_MODEL="student_management_app.CustomUser"
